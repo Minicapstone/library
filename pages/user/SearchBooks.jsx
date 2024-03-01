@@ -1,8 +1,8 @@
+"use client";
 import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
 const UserSearchBooks = () => {
-  
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Default");
 
@@ -61,8 +61,8 @@ const UserSearchBooks = () => {
   );
 
   return (
-    <div className="px-3">
-      <div className="bg-white my-5 px-2 py-2 rounded-xl shadow-lg flex justify-between search-container">
+    <div className="px-4">
+      <div className="bg-white my-4 px-2 py-2 rounded-xl shadow-lg flex justify-between">
         <div className="flex items-center w-full">
           <BiSearch className="text-3xl mx-2 my-2 sm:text-4xl" />
 
@@ -92,7 +92,7 @@ const UserSearchBooks = () => {
 
       <table className="bg-white w-full my-5 rounded-2xl px-2 py-2 shadow-xl overflow-y-auto">
         <thead>
-          <tr className="text-left text-black text-xl border-b border-gray table-title">
+          <tr className="text-left text-black text-base border-b border-gray table-title">
             <th className="px-3 py-4">DDC ID</th>
             <th className="px-3 py-4">Title of the Book</th>
             <th className="px-3 py-4">Author</th>
@@ -103,7 +103,7 @@ const UserSearchBooks = () => {
 
         <tbody>
           {filteredData.map((item) => (
-            <tr key={item.ddcId} className="border-b border-gray table-text">
+            <tr key={item.ddcId} className="border-b border-gray text-sm ">
               <td className="px-2 py-2">{item.ddcId}</td>
               <td className="px-2 py-2">{item.title}</td>
               <td className="px-2 py-2">{item.author}</td>
@@ -121,6 +121,6 @@ const UserSearchBooks = () => {
       </table>
     </div>
   );
-}
+};
 
 export default UserSearchBooks;
